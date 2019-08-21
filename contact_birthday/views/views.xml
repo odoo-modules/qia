@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="contact_birthday.res_partner_form">
+            <field name="name">contact_birthday form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="function" position="after">
+                    <field name="birthday_date" widget="date"/>
+                </field>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <!--
+        <record model="ir.actions.act_window" id="contact_birthday.action_window">
+          <field name="name">contact_birthday window</field>
+          <field name="res_model">contact_birthday.contact_birthday</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+        -->
+
+        <!-- server action to the one above -->
+        <!--
+        <record model="ir.actions.server" id="contact_birthday.action_server">
+          <field name="name">contact_birthday server</field>
+          <field name="model_id" ref="model_contact_birthday_contact_birthday"/>
+          <field name="state">code</field>
+          <field name="code">
+            action = {
+              "type": "ir.actions.act_window",
+              "view_mode": "tree,form",
+              "res_model": self._name,
+            }
+          </field>
+        </record>
+        -->
+
+        <!-- Top menu item -->
+        <!--
+        <menuitem name="contact_birthday" id="contact_birthday.menu_root"/>
+        -->
+        <!-- menu categories -->
+        <!--
+        <menuitem name="Menu 1" id="contact_birthday.menu_1" parent="contact_birthday.menu_root"/>
+        <menuitem name="Menu 2" id="contact_birthday.menu_2" parent="contact_birthday.menu_root"/>
+        -->
+        <!-- actions -->
+        <!--
+        <menuitem name="List" id="contact_birthday.menu_1_list" parent="contact_birthday.menu_1"
+                  action="contact_birthday.action_window"/>
+        <menuitem name="Server to list" id="contact_birthday" parent="contact_birthday.menu_2"
+                  action="contact_birthday.action_server"/>
+        -->
+    </data>
+</odoo>
